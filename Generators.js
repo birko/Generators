@@ -1,7 +1,8 @@
-// Module
-var Generators;
+﻿var Generators;
 (function (Generators) {
-    //rovnaka pravdepodobnost na padnutie hodnoty
+    "use strict";
+
+    // rovnaka pravdepodobnost na padnutie hodnoty
     function Uniform() {
         return Math.random();
     }
@@ -12,7 +13,7 @@ var Generators;
     }
     Generators.UniformInterval = UniformInterval;
 
-    //Pocetnost nastania javu za fixny casovy interval lambda je intenzita (napr max 20 za hodinu)
+    // pocetnost nastania javu za fixny casovy interval lambda je intenzita (napr max 20 za hodinu)
     function Poisson(lambda) {
         var k = 0;
         var limit = Math.exp((-1) * lambda);
@@ -25,20 +26,20 @@ var Generators;
     }
     Generators.Poisson = Poisson;
 
-    //pravdepodobnost uspechu
+    // pravdepodobnost uspechu
     function Alternative(probability) {
         return (Uniform() < probability) ? 1 : 0;
     }
     Generators.Alternative = Alternative;
 
-    //Vzdialenost "cas" medzi javmi (poruchami, prihodmi)
+    // vzdialenost "cas" medzi javmi (poruchami, prihodmi)
     // lambda maximalny cas
     function Exponential(lambda) {
         return (Math.log(1 - Uniform()) / ((-1) * lambda));
     }
     Generators.Exponential = Exponential;
 
-    //celkovy cas trvania jednotlivych faz kde kazda faza ma Exponencionalne trvanie
+    // celkovy cas trvania jednotlivych faz kde kazda faza ma Exponencionalne trvanie
     // k pocet Exponencianlych hodnot (pocet faz)
     function Erlang(lambda, k) {
         var result = 0;
@@ -49,7 +50,7 @@ var Generators;
     }
     Generators.Erlang = Erlang;
 
-    //cas medzi poruchami
+    // cas medzi poruchami
     function Weibull(lambda, k) {
         return (lambda * Math.exp((1 / k) * Math.log(-Math.log(1 - Uniform()))));
     }
