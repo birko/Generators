@@ -1,4 +1,4 @@
-﻿var Generators;
+var Generators;
 (function (Generators) {
     "use strict";
 
