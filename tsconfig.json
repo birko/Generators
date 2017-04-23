@@ -1,0 +1,22 @@
+﻿{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "declaration": true,
+    "watch": true,
+    "outFile": "generators.js"
+  },
+  "include": [
+    "*.ts"
+  ],
+  "exclude": [
+    "*.d.ts"
+  ] /*,
+
+  "files": [
+  ]*/
+}

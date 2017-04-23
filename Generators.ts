@@ -43,12 +43,12 @@ module Generators {
     }
 
     // cas medzi poruchami
-    function Weibull(lambda: number, k: number): number {
+    export function Weibull(lambda: number, k: number): number {
         return (lambda * Math.exp((1 / k) * Math.log(-Math.log(1 - Uniform()))));
     }
 
     // pri nedostatku dat mame maximalnu hodnotu minimalnu hodnotu a najpravdepodnonejsiu hodnotu
-    function Triangular(min: number, modus: number, max: number): number {
+    export function Triangular(min: number, modus: number, max: number): number {
         var rand: number = Uniform();
         var result:number = 0;
         if (rand < (modus - min) / (max - min)) {
@@ -59,7 +59,7 @@ module Generators {
         return result;
     }
 
-    function Discrete(values: Array<number>, probabilities: Array<number>): number {
+    export function Discrete(values: Array<number>, probabilities: Array<number>): number {
         var rand: number = Uniform();
         var pos: number = 0;
         var pom: number = 0;
