@@ -66,6 +66,8 @@
         return result;
     }
 
+    // returns the value  from values according its position probability in  probabilities
+    // valuesa and probabilities are same weighted. ordered by lovest probability
     export function Discrete(values: Array<number>, probabilities: Array<number>): number {
         var rand: number = Uniform();
         var pos: number = 0;
